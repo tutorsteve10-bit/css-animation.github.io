@@ -1,0 +1,148 @@
+/* --- Global Setup --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f0f5;
+    font-family: 'Poppins', sans-serif;
+    color: #222;
+}
+
+/* --- 3D Container Setup --- */
+.card-container {
+    width: 300px;
+    height: 400px;
+    /* Establishes the 3D space for children */
+    perspective: 1000px; 
+}
+
+/* The label now acts as the clickable surface */
+.card-label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    /* Animation duration for the flip */
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    /* Crucial for 3D rotation */
+    transform-style: preserve-3d; 
+    position: relative;
+    border-radius: 15px;
+}
+
+/* --- The Interactive Flip Trigger (on CHECKED state) --- */
+/* Selects the inner element when the card-toggle input is checked */
+.card-toggle-input:checked + .card-label .card-inner {
+    /* Flip the card */
+    transform: rotateY(180deg);
+}
+
+
+/* --- Card Faces Styling --- */
+/* (Styles for card-face, card-front, card-back remain largely the same) */
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* Hides the back of the element when it's facing away */
+    backface-visibility: hidden; 
+    border-radius: 15px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-front {
+    background: linear-gradient(135deg, #0066ff, #0044cc);
+    color: white;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.card-back {
+    background: #ffffff;
+    color: #222;
+    transform: rotateY(180deg);
+    justify-content: space-between; /* Adjusted for the "Tap to close" text */
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+/* New style for the visual cue to flip back */
+.flip-back-prompt {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 10px;
+}
+
+/* --- Shine Effect Controlled by Checkbox --- */
+.shine {
+    /* ... existing shine styles ... */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background: radial-gradient(circle at 120% 50%, rgba(255, 255, 255, 0.6), transparent 70%);
+    opacity: 0;
+    transform: translate(-10%, -10%);
+    transition: opacity 0.5s ease, transform 0.8s ease;
+}
+
+/* Activates the shine when the checkbox is checked (card is flipped) */
+.card-toggle-input:checked + .card-label .shine {
+    opacity: 1;
+    transform: translate(10%, 10%);
+}
+
+/* --- (Rest of the card-back ul/li/btn-features styles are the same) --- */
+.card-back h2 {
+    color: #0066ff;
+    margin-bottom: 15px;
+}
+
+.card-back ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.card-back li {
+    padding: 5px 0;
+    font-weight: 500;
+    width: 100%;
+}
+
+.btn-features {
+    display: inline-block;
+    padding: 10px 25px;
+    background: #0066ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-features:hover {
+    background: #0055aa;
+  }
