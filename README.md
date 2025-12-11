@@ -1,5 +1,4 @@
 # css-animation.github.io
-Personal portfolio website built with HTML, CSS, and JavaScript to showcase projects, skills, and contact information.
 This repository serves as a dedicated showcase for a variety of projects built using only CSS for animation and transitions. The goal is to explore the full capabilities of CSS for creating engaging, performant, and accessible user interface effects without relying on JavaScript for movement logic.
 Key Features / What You Will Find
 Diverse Techniques: Examples utilizing keyframe animations, transform properties (translate, scale, rotate, skew), transition properties, and pseudo-elements.
@@ -10,4 +9,3 @@ Accessibility (A11Y) Minded: Where applicable, includes considerations for users
 Technologies Used
 HTML5
 CSS3 (with heavy focus on @keyframes, transition, and transform)
-(Optional: Mention a pre-processor if you used one, e.g., Sass/SCSS)
