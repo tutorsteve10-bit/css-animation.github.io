@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D CSS Interactive Card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card-container">
+        <input type="checkbox" id="card-toggle" class="card-toggle-input" hidden>
+        
+        <label for="card-toggle" class="card-label">
+            
+            <div class="card-inner">
+                
+                <div class="card-face card-front">
+                    <h3>RideNow Pro Pass</h3>
+                    <p>Tap to See Features</p>
+                    <div class="shine"></div> 
+                </div>
+                
+                <div class="card-face card-back">
+                    <h2>Pro Features</h2>
+                    <ul>
+                        <li>⚡ Priority Booking</li>
+                        <li>⭐ 10% Off All Rides</li>
+                        <li>🗺️ Free Route Upgrades</li>
+                    </ul>
+                    <a href="#" class="btn-features">Upgrade Now</a>
+                    
+                    <p class="flip-back-prompt">Tap to close</p>
+                </div>
+            </div>
+
+        </label>
+    </div>
+
+</body>
+</html>
